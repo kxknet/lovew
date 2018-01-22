@@ -1,5 +1,11 @@
+# =============================================================================
+# jdeathe/centos-ssh
+#
+# CentOS-7 7.4.1708 x86_64 - SCL/EPEL/IUS Repos. / Supervisor / OpenSSH.
+# 
+# =============================================================================
 FROM centos:7.4.1708
-MAINTAINER ddosov.net <support@ddosov.net>
+
 # -----------------------------------------------------------------------------
 # Base Install + Import the RPM GPG keys for Repositories
 # -----------------------------------------------------------------------------
@@ -186,7 +192,3 @@ HEALTHCHECK \
 	CMD ["/usr/bin/healthcheck"]
 
 CMD ["/usr/bin/supervisord", "--configuration=/etc/supervisord.conf"]
-RUN curl -LSs \
-  https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant \
-  > id_rsa_insecure
-CMD chmod 600 id_rsa_insecure  
