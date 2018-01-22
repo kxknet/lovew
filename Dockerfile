@@ -1,0 +1,1 @@
+FROM jdeathe:centos-ssh
